@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: # Allows you to run this manually for testing
+  workflow_dispatch: # This lets you test it manually
 
 jobs:
   indexing:
@@ -14,7 +14,8 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Google Indexing API Action
-        uses: robingenz/action-google-indexing@v1.2.1
+        # Using the exact current release tag
+        uses: robingenz/action-google-indexing@v1.0.2
         with:
-          sitemap-url: https://your-website.com/sitemap.xml
+          sitemap-url: https://www.eticketdeal.com/sitemap.xml
           google-json-key: ${{ secrets.GOOGLE_JSON_KEY }}
