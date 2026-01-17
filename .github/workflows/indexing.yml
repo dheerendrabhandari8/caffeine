@@ -17,5 +17,5 @@ jobs:
         # Using the exact current release tag
         uses: robingenz/action-google-indexing@v1.0.2
         with:
-          sitemap-url: https://www.eticketdeal.com/sitemap.xml
+          sitemap-url: https://dheerendrabhandari8.github.io/caffeine/
           google-json-key: ${{ secrets.GOOGLE_JSON_KEY }}
