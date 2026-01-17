@@ -1,18 +1,19 @@
 name: Google Indexing
 
 on:
-  push:
-    branches:
-      - main  # Triggers when you push to main
+  push:
+    branches:
+      - main
 
 jobs:
-  indexing:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Google Indexing API Action
-        uses: robingenz/action-google-indexing@v1
-        with:
-          # Path to your sitemap or a list of URLs
-          sitemap-url: https://your-website.com/sitemap.xml
-          google-json-key: ${{ secrets.GOOGLE_JSON_KEY }}
+  indexing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Google Indexing API Action
+        uses: robingenz/action-google-indexing@v1
+        with:
+          sitemap-url: https://your-website.com/sitemap.xml
+          google-json-key: ${{ secrets.GOOGLE_JSON_KEY }}
